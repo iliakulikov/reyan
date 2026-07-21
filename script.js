@@ -1,5 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
   const navLinks = document.querySelectorAll('a[href^="#"]');
+  const contactDialog = document.querySelector("#contact-dialog");
+  const successDialog = document.querySelector("#success-dialog");
+  const contactForm = document.querySelector("#contact-form");
+  const openContactButton = document.querySelector("[data-open-contact]");
+  const heroNav = document.querySelector(".hero-nav");
+  const menuToggle = document.querySelector(".menu-toggle");
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
@@ -20,6 +26,52 @@ document.addEventListener("DOMContentLoaded", () => {
         behavior: "smooth",
         block: "start"
       });
+
+      heroNav?.classList.remove("menu-open");
+      menuToggle?.setAttribute("aria-expanded", "false");
     });
+  });
+
+  menuToggle?.addEventListener("click", () => {
+    const isOpen = heroNav?.classList.toggle("menu-open") ?? false;
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && heroNav?.classList.contains("menu-open")) {
+      heroNav.classList.remove("menu-open");
+      menuToggle?.setAttribute("aria-expanded", "false");
+      menuToggle?.focus();
+    }
+  });
+
+  const closeDialog = (dialog) => {
+    if (dialog?.open) {
+      dialog.close();
+    }
+  };
+
+  openContactButton?.addEventListener("click", () => {
+    contactDialog?.showModal();
+  });
+
+  document.querySelectorAll("[data-close-dialog]").forEach((button) => {
+    button.addEventListener("click", () => closeDialog(button.closest("dialog")));
+  });
+
+  [contactDialog, successDialog].forEach((dialog) => {
+    dialog?.addEventListener("click", (event) => {
+      if (event.target === dialog) {
+        closeDialog(dialog);
+      }
+    });
+  });
+
+  contactForm?.addEventListener("submit", (event) => {
+    event.preventDefault();
+    closeDialog(contactDialog);
+    contactForm.reset();
+    successDialog?.showModal();
   });
 });
