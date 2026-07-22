@@ -782,7 +782,8 @@ body:has(dialog[open]) {
 .success-logo {
   display: block;
   width: min(100%, 330px);
-  height: 22px;
+  height: auto;
+  aspect-ratio: 382.597 / 22.324;
   object-fit: contain;
   object-position: left center;
 }
@@ -1115,7 +1116,19 @@ body:has(dialog[open]) {
   line-height: 1.6;
 }
 
-@media (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1279px) {
+  .site {
+    width: 1400px;
+    max-width: none;
+  }
+
+  .hero {
+    height: 711px;
+    min-height: 711px;
+  }
+}
+
+@media (max-width: 767px) {
   .section-title {
     font-size: clamp(44px, 5.2vw, 60px);
     letter-spacing: 0.14em;
@@ -1441,7 +1454,7 @@ body:has(dialog[open]) {
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   .hero-nav {
     grid-column: 1 / -1;
     width: 100%;
@@ -1504,7 +1517,7 @@ body:has(dialog[open]) {
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   .hero-nav {
     flex-direction: row;
     gap: 24px;
@@ -1517,7 +1530,7 @@ body:has(dialog[open]) {
   }
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 767px) {
   .hero {
     padding: 20px 16px 0;
     grid-template-columns: minmax(0, 1fr);
@@ -1566,13 +1579,15 @@ body:has(dialog[open]) {
 
   .hero-media::after {
     bottom: -1px;
-    background: linear-gradient(
-      180deg,
-      rgba(16, 16, 16, 0) 20%,
-      rgba(16, 16, 16, 0.18) 45%,
-      rgba(16, 16, 16, 0.65) 75%,
-      #101010 100%
-    );
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.12)),
+      linear-gradient(
+        180deg,
+        rgba(16, 16, 16, 0) 20%,
+        rgba(16, 16, 16, 0.18) 45%,
+        rgba(16, 16, 16, 0.65) 75%,
+        #101010 100%
+      );
   }
 
   .hero-copy {
@@ -1695,6 +1710,7 @@ body:has(dialog[open]) {
     width: 100%;
     height: auto;
     aspect-ratio: 402 / 451;
+    margin: 0 auto 36px;
     padding: 0;
     overflow: hidden;
   }
@@ -1854,6 +1870,66 @@ body:has(dialog[open]) {
     margin-top: 378px;
   }
 
+  .mission-card {
+    width: min(100%, 342px);
+    height: 538px;
+    justify-self: center;
+  }
+
+  .mission-card h3,
+  .mission-card p,
+  .mission-card:nth-child(1) h3,
+  .mission-card:nth-child(1) p,
+  .mission-card:nth-child(3) h3,
+  .mission-card:nth-child(3) p {
+    position: absolute;
+    left: 35px;
+    right: auto;
+    margin: 0;
+    text-align: left;
+  }
+
+  .mission-card h3,
+  .mission-card:nth-child(1) h3,
+  .mission-card:nth-child(3) h3 {
+    top: 285px;
+    color: #fff;
+    font-family: Montserrat, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .mission-card h3 {
+    width: 263px;
+  }
+
+  .mission-card:nth-child(1) h3 {
+    width: 212px;
+  }
+
+  .mission-card:nth-child(3) h3 {
+    width: 204px;
+  }
+
+  .mission-card p,
+  .mission-card:nth-child(1) p,
+  .mission-card:nth-child(3) p {
+    top: 363px;
+    width: 254px;
+    color: #d4d4d4;
+    font-family: Montserrat, sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .mission-card:nth-child(1) p {
+    width: 252px;
+  }
+
   .about-grid img {
     width: 100vw;
     max-width: none;
@@ -1871,6 +1947,10 @@ body:has(dialog[open]) {
 
   .service:first-of-type {
     margin-top: 36px;
+  }
+
+  .service + .service {
+    margin-top: 10px;
   }
 
   .about-p1 {
@@ -1989,8 +2069,12 @@ body:has(dialog[open]) {
   }
 
   .service {
-    min-height: 0;
-    padding: 254px 28px 36px;
+    width: min(100%, 342px);
+    height: 477px;
+    min-height: 477px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 156px 35px 35px;
     background: #000;
     overflow: hidden;
   }
@@ -2000,10 +2084,10 @@ body:has(dialog[open]) {
     position: absolute;
     inset: 0 0 auto;
     width: 100%;
-    height: 220px;
-    background-image: var(--bg);
+    height: 233px;
+    background-image: var(--mobile-bg);
     background-size: cover;
-    background-position: right center;
+    background-position: var(--mobile-position, center center);
     background-repeat: no-repeat;
   }
 
@@ -2012,7 +2096,7 @@ body:has(dialog[open]) {
     position: absolute;
     inset: 0 0 auto;
     width: 100%;
-    height: 220px;
+    height: 233px;
     background: linear-gradient(180deg, rgba(0, 0, 0, 0) 24%, rgba(0, 0, 0, 0.28) 50%, #000 100%);
     pointer-events: none;
   }
@@ -2026,27 +2110,42 @@ body:has(dialog[open]) {
 
   .services {
     min-height: 0;
-    padding-bottom: 80px;
+    padding-bottom: 36px;
   }
 
   .service-link {
-    position: static;
-    margin-top: 24px;
+    position: absolute;
+    left: 35px;
+    bottom: 35px;
+    margin-top: 0;
+    height: auto;
+    padding: 6px 15px;
   }
 
   .service h3 {
     max-width: 100%;
-    font-family: var(--display-font);
-    font-size: clamp(36px, 10vw, 40px);
+    color: #fff;
+    font-family: "Romie", "Bodoni Moda", "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-style: normal;
     font-weight: 300;
-    line-height: 1.02;
+    line-height: 102%;
     white-space: normal;
+  }
+
+  .service h3 span {
+    display: block;
   }
 
   .service p {
     max-width: 100%;
     margin-top: 20px;
+    color: #fff;
+    font-family: Montserrat, sans-serif;
     font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
   }
 
   .services .section-title {
@@ -2260,12 +2359,13 @@ body:has(dialog[open]) {
 
   .footer1323-right {
     position: absolute;
-    left: 50%;
+    left: 44px;
     bottom: 45px;
-    width: 100%;
-    transform: translateX(-50%);
-    text-align: center;
-    font-size: 14px;
+    width: calc(100% - 60px);
+    transform: none;
+    text-align: left;
+    white-space: nowrap;
+    font-size: clamp(10px, 3vw, 14px);
   }
 
   .dialog-shell {
@@ -2274,7 +2374,7 @@ body:has(dialog[open]) {
 
   .dialog-logo {
     width: min(260px, calc(100% - 48px));
-    height: 18px;
+    height: auto;
     margin: 0 auto;
     object-fit: contain;
     object-position: center;

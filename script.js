@@ -6,6 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const openContactButton = document.querySelector("[data-open-contact]");
   const heroNav = document.querySelector(".hero-nav");
   const menuToggle = document.querySelector(".menu-toggle");
+  const site = document.querySelector(".site");
+
+  const syncScaledDesktopLayout = () => {
+    if (!site) {
+      return;
+    }
+
+    if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+      site.style.zoom = String(window.innerWidth / 1400);
+      return;
+    }
+
+    site.style.removeProperty("zoom");
+  };
+
+  syncScaledDesktopLayout();
+  window.addEventListener("resize", syncScaledDesktopLayout, { passive: true });
 
   navLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
