@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const navLinks = document.querySelectorAll('a[href^="#"]');
+  const navLinks = document.querySelectorAll('a[href^="#"]:not(.service-link)');
   const contactDialog = document.querySelector("#contact-dialog");
   const successDialog = document.querySelector("#success-dialog");
   const contactForm = document.querySelector("#contact-form");
@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroNav = document.querySelector(".hero-nav");
   const menuToggle = document.querySelector(".menu-toggle");
   const site = document.querySelector(".site");
+  const serviceSelect = contactForm?.querySelector('select[name="service"]');
 
   const syncScaledDesktopLayout = () => {
     if (!site) {
@@ -70,7 +71,23 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   openContactButton?.addEventListener("click", () => {
+    if (serviceSelect) {
+      serviceSelect.value = "";
+    }
+
     contactDialog?.showModal();
+  });
+
+  document.querySelectorAll(".service-link[data-service]").forEach((link) => {
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+
+      if (serviceSelect) {
+        serviceSelect.value = link.dataset.service ?? "";
+      }
+
+      contactDialog?.showModal();
+    });
   });
 
   document.querySelectorAll("[data-close-dialog]").forEach((button) => {
