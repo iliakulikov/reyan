@@ -152,6 +152,34 @@ body {
   min-height: 941px;
   margin: 0 auto;
   padding: 0;
+  background: #fff;
+  isolation: isolate;
+}
+
+.mission::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(
+      ellipse 88% 72% at 50% 100%,
+      rgba(247, 190, 76, 0.58) 0%,
+      rgba(249, 205, 112, 0.34) 48%,
+      rgba(249, 205, 112, 0) 80%
+    ),
+    #fff;
+  pointer-events: none;
+}
+
+.mission .section-title,
+.mission .title-block,
+.mission-grid {
+  z-index: 1;
 }
 
 .mission .section-title,
@@ -185,13 +213,13 @@ body {
   top: 224px;
   margin-top: 0;
   display: grid;
-  grid-template-columns: repeat(3, 350px);
-  gap: 55px;
+  grid-template-columns: repeat(3, 380px);
+  gap: 10px;
 }
 
 .mission-card {
   position: relative;
-  width: 350px;
+  width: 380px;
   height: 598px;
   overflow: hidden;
   color: #fff;
@@ -268,6 +296,14 @@ body {
   min-height: 829px;
   padding: 90px 120px 0;
   padding-left: max(120px, calc(50% - 700px + 120px));
+  background:
+    radial-gradient(
+      ellipse 92% 86% at 50% 0%,
+      rgba(247, 190, 76, 0.58) 0%,
+      rgba(249, 205, 112, 0.32) 52%,
+      rgba(249, 205, 112, 0) 84%
+    ),
+    #fff;
 }
 
 .about .title-block {
@@ -276,7 +312,7 @@ body {
 }
 
 .about-grid {
-  margin-top: 327px;
+  margin-top: 0;
   display: block;
 }
 
@@ -291,24 +327,27 @@ body {
   width: 761px;
   height: 829px;
   object-fit: cover;
+  object-position: center center;
 }
 
 .about-p1,
 .about-p2 {
+  position: absolute;
+  left: max(120px, calc(50% - 700px + 120px));
   margin: 0;
   font-size: 16px;
   line-height: 1.2;
 }
 
 .about-p1 {
-  margin-top: 151px;
+  top: 489px;
   width: 380px;
   color: #373737;
   font-weight: 500;
 }
 
 .about-p2 {
-  margin-top: 46px;
+  top: 646px;
   width: 408px;
   color: #373737;
   font-weight: 300;
@@ -517,8 +556,16 @@ body {
 
 .services {
   position: relative;
-  min-height: 2396px;
-  padding: 90px 120px 175px;
+  min-height: 0;
+  padding: 90px 120px;
+  background:
+    radial-gradient(
+      ellipse 72% 48% at 50% 43%,
+      rgba(247, 184, 57, 0.72) 0%,
+      rgba(249, 200, 94, 0.46) 52%,
+      rgba(249, 205, 112, 0) 84%
+    ),
+    #fff;
 }
 
 .services .title-block {
@@ -540,7 +587,7 @@ body {
 }
 
 .service + .service {
-  margin-top: 40px;
+  margin-top: 10px;
 }
 
 .service h3 {
@@ -622,12 +669,32 @@ body {
 .logos220 img:nth-child(15) { left: 811px; top: 470px; width: 298px; height: 75px; }
 .logos220 img:nth-child(16) { left: 1121px; top: 478px; width: 306px; height: 53px; }
 
+.collection-heading {
+  width: 1400px;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 120px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.collection-heading .section-title {
+  padding: 0;
+}
+
+.partners-heading,
+.gallery-heading {
+  margin-top: 90px;
+}
+
 .style168 {
   position: relative;
   width: 1400px;
   max-width: 100%;
   height: 1887px;
-  margin: 0 auto;
+  margin: 59px auto 0;
   background: #fff;
   overflow: hidden;
 }
@@ -660,6 +727,14 @@ body {
 .style168-grid > :nth-child(8) img { left: 941px; top: 942px; }
 .style168-grid > :nth-child(9) img { left: 470px; top: 1184px; }
 .style168-grid > :nth-child(10) { left: 941px; top: 1414px; }
+
+/* Preserve the portrait focal points from the design within the existing squares. */
+@media (min-width: 768px) {
+  .style168-grid > :nth-child(3) img { object-position: center 18%; }
+  .style168-grid > :nth-child(7) img { object-position: center 14%; }
+  .style168-grid > :nth-child(9) img { object-position: center 18%; }
+  .style168-grid > :nth-child(10) { object-position: center top; }
+}
 
 .style168-text {
   position: absolute;
@@ -1125,10 +1200,14 @@ body:has(dialog[open]) {
   line-height: 1.6;
 }
 
-@media (min-width: 768px) and (max-width: 1279px) {
+@media (min-width: 768px) and (max-width: 1399px) {
   .site {
     width: 1400px;
     max-width: none;
+  }
+
+  .mission::before {
+    width: 1400px;
   }
 
   .hero {
@@ -1431,6 +1510,7 @@ body:has(dialog[open]) {
 
   .about-p1,
   .about-p2 {
+    position: static;
     width: 100%;
     margin-top: 20px;
   }
@@ -1695,6 +1775,44 @@ body:has(dialog[open]) {
     height: 21px;
     background: #000;
     flex: 0 0 21px;
+  }
+
+  .collection-heading {
+    padding: 0 32px;
+    gap: 12px;
+  }
+
+  .collection-heading .title-block {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+  }
+
+  .collection-heading .section-title {
+    font-size: clamp(25px, 7vw, 34px);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .partners-heading {
+    margin-top: 0;
+  }
+
+  .logos220 {
+    margin-bottom: 0;
+  }
+
+  .gallery-heading {
+    margin-top: 90px;
+  }
+
+  .gallery-heading .section-title {
+    font-size: clamp(19px, 5.8vw, 25px);
+    letter-spacing: 0.07em;
+  }
+
+  .style168 {
+    margin-top: 36px;
   }
 
   .mission .section-title {
@@ -2119,7 +2237,7 @@ body:has(dialog[open]) {
 
   .services {
     min-height: 0;
-    padding-bottom: 36px;
+    padding-bottom: 90px;
   }
 
   .service-link {

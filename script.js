@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    if (window.innerWidth >= 768 && window.innerWidth < 1280) {
+    if (window.innerWidth >= 768 && window.innerWidth < 1400) {
       site.style.zoom = String(window.innerWidth / 1400);
       return;
     }
