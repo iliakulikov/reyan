@@ -3584,6 +3584,7 @@ body .about-photo-frame {
 /* Keep the mobile photo flush with the section bottom on narrow viewports. */
 @media (max-width: 520px) {
   body .about-grid > .about-photo-frame {
+    top: 105.22388vw;
     bottom: -1px;
     height: auto;
   }
