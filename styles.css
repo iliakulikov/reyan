@@ -3385,3 +3385,86 @@ body .gallery-heading .title-block {
     outline: 0;
   }
 }
+
+/* Keep the bento_150 tile inside its existing slot without altering the grid. */
+@media (min-width: 768px) {
+  body .bento131 > img:nth-child(8) {
+    clip-path: inset(0 2px);
+  }
+}
+
+/* Final mobile refinements: hero, About, partner marks and gallery heading. */
+body .logos220 > img:nth-child(2) {
+  mix-blend-mode: multiply;
+}
+
+@media (max-width: 767px) {
+  body .hero {
+    padding-top: 0;
+  }
+
+  body .hero-media {
+    width: calc(100% + 32px);
+    max-width: none;
+    margin: 0 -16px;
+    justify-self: stretch;
+  }
+
+  body .hero-media::after {
+    background: linear-gradient(
+      180deg,
+      rgba(27, 27, 27, 0) 38%,
+      rgba(27, 27, 27, 0.18) 58%,
+      rgba(27, 27, 27, 0.72) 82%,
+      #1b1b1b 100%
+    );
+  }
+
+  body .about .section-title::before {
+    background: #fff;
+  }
+
+  body .about-grid {
+    margin-top: 24px;
+  }
+
+  body .gallery-heading {
+    align-items: center;
+  }
+
+  body .gallery-heading .title-block {
+    margin-top: 0;
+    align-self: center;
+  }
+
+  body .logos220 > img:nth-child(13) {
+    width: 100% !important;
+    max-width: 118px !important;
+    height: auto !important;
+    aspect-ratio: 301 / 129.63;
+  }
+
+  body .logos220 > img:nth-child(2) {
+    display: block !important;
+    width: auto !important;
+    height: auto !important;
+    max-width: 84px !important;
+    max-height: 51px !important;
+  }
+
+}
+
+@media (max-width: 520px) {
+  body .about {
+    min-height: 740px;
+  }
+
+  body .about-grid img {
+    width: calc(100% + 80px);
+    margin-left: -40px;
+  }
+
+  body .about-grid > div {
+    bottom: 44px;
+  }
+}
