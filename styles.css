@@ -3308,6 +3308,14 @@ body .gallery-heading .title-block {
   }
 }
 
+/* Keep event_10 inside its existing desktop cell without moving the gallery. */
+@media (min-width: 768px) {
+  body .style168-grid > img:nth-child(10) {
+    clip-path: none;
+    transform: translateY(2px);
+  }
+}
+
 /* Mobile partner grid: fully detach from desktop/Figma absolute coordinates. */
 @media (max-width: 767px) {
   body .logos220 {
@@ -3400,14 +3408,21 @@ body .logos220 > img:nth-child(2) {
 
 @media (max-width: 767px) {
   body .hero {
-    padding-top: 0;
+    padding-top: 20px;
   }
 
   body .hero-media {
-    width: calc(100% + 32px);
+    width: 100vw !important;
     max-width: none;
-    margin: 0 -16px;
+    margin-top: 0;
+    margin-right: calc(50% - 50vw);
+    margin-left: calc(50% - 50vw);
     justify-self: stretch;
+  }
+
+  body .hero-media img {
+    width: 100%;
+    object-fit: cover;
   }
 
   body .hero-media::after {
