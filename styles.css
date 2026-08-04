@@ -3029,6 +3029,11 @@ body:has(dialog[open]) {
     width: calc(33.334% + 2px);
   }
 
+  body .bento131 > img:nth-child(4),
+  body .bento131 > img:nth-child(8) {
+    width: 33.334%;
+  }
+
   body .bento131 > :nth-child(1) { left: 3.714%; }
   body .bento131 > :nth-child(2) { left: 33.333%; }
   body .bento131 > :nth-child(3) { left: 66.666%; }
@@ -3180,7 +3185,7 @@ body .gallery-heading .title-block {
 /* Keep the bento_150 tile inside its existing slot without altering the grid. */
 @media (min-width: 768px) {
   body .bento131 > img:nth-child(8) {
-    clip-path: inset(0 2px);
+    clip-path: none;
   }
 }
 
@@ -3584,7 +3589,7 @@ body .about-photo-frame {
 /* Keep the mobile photo flush with the section bottom on narrow viewports. */
 @media (max-width: 520px) {
   body .about-grid > .about-photo-frame {
-    top: 105.22388vw;
+    top: calc(105.22388vw + 12px);
     bottom: -1px;
     height: auto;
   }
