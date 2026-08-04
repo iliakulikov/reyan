@@ -15,6 +15,13 @@
   body .hero-media::after { background: linear-gradient(180deg, rgba(141,141,141,0) 50%, #8d8d8d 100%); }
   body .about { width: 1400px; max-width: 100%; height: 829px; min-height: 829px; margin: 0 auto; padding: 0; overflow: hidden; background: #111; }
   body .about-grid img { inset: 0; width: 100%; height: 100%; object-position: center; }
+  body .about::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.02) 30%, rgba(0, 0, 0, 0.78) 100%);
+    pointer-events: none;
+  }
   body .about .section-title { position: absolute; left: 182px; top: 558px; padding: 0; }
   body .about .title-block { left: 120px; top: 568px; background: #fff; }
   body .about-p1 { left: 120px; top: 669px; width: 528px; color: #fff; font-weight: 400; }
@@ -74,232 +81,6 @@
   body .style168-grid > :nth-child(3), body .style168-grid > :nth-child(4), body .style168-grid > :nth-child(7) { grid-column: auto; }
   body .style168-grid > :nth-child(10) { display: block; grid-column: 2; }
   body .style168-text { display: block; padding: 32px 24px; font-size: 14px; line-height: 1.45; }
-}
-
-/* 2026 Figma refresh */
-@media (min-width: 768px) {
-  .hero {
-    background: #8d8d8d;
-  }
-
-  .hero .logo-wordmark,
-  .hero-mark,
-  .hero-word {
-    filter: invert(1);
-  }
-
-  .hero-nav a {
-    color: #fff;
-  }
-
-  .hero-media {
-    width: 890px;
-  }
-
-  .hero-media::after {
-    background: linear-gradient(180deg, rgba(141,141,141,0) 50%, #8d8d8d 100%);
-  }
-
-  .about {
-    width: 1400px;
-    max-width: 100%;
-    height: 829px;
-    min-height: 829px;
-    margin: 0 auto;
-    padding: 0;
-    color: #fff;
-    overflow: hidden;
-    background: #111;
-  }
-
-  .about-grid img {
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-position: center;
-  }
-
-  .about::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.02) 30%, rgba(0,0,0,.78) 100%);
-    pointer-events: none;
-  }
-
-  .about .section-title,
-  .about .title-block,
-  .about-p1,
-  .about-p2 {
-    z-index: 2;
-  }
-
-  .about .section-title { position: absolute; left: 182px; top: 558px; padding: 0; }
-  .about .title-block { left: 120px; top: 568px; background: #fff; }
-  .about-p1 { left: 120px; top: 669px; width: 528px; color: #fff; font-weight: 400; }
-  .about-p2 { left: 783px; top: 669px; width: 497px; color: #fff; }
-
-  .node212 {
-    height: 375px;
-  }
-
-  .node212 p:nth-child(1) { top: 80px; }
-  .node212 p:nth-child(2) { top: 157px; }
-  .node212 p:nth-child(3) { top: 234px; }
-
-  .bento131 {
-    height: 1673px;
-  }
-
-  .bento131 img {
-    width: 467px;
-    height: 467px;
-  }
-
-  .bento131 > :nth-child(1) { left: 52px; top: 18px; }
-  .bento131 > :nth-child(2) { left: 467px; top: 0; }
-  .bento131 > :nth-child(3) { left: 933px; top: 0; }
-  .bento131 > :nth-child(4) { left: 0; top: 280px; }
-  .bento131 > :nth-child(5) { left: 504px; top: 503px; }
-  .bento131 > :nth-child(6) { left: 933px; top: 467px; }
-  .bento131 > :nth-child(7) { left: 0; top: 747px; }
-  .bento131 > :nth-child(8) { left: 467px; top: 747px; }
-  .bento131 > :nth-child(9) { left: 971px; top: 970px; }
-  .bento131 img.bento-wide { left: -1px; top: 1214px; height: 459px; }
-
-  .services {
-    padding: 90px 120px;
-    background: #8d8d8d;
-  }
-
-  .partners-heading {
-    height: 255px;
-    margin-top: 0;
-    padding-top: 90px;
-    align-items: flex-start;
-  }
-
-  .partners-heading .section-title {
-    max-width: 1085px;
-    line-height: 1.02;
-  }
-
-  .logos220 {
-    height: 397px;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    gap: 0;
-    padding: 22px 70px 38px;
-    align-items: center;
-    justify-items: center;
-  }
-
-  .logos220 img {
-    position: static !important;
-    width: auto !important;
-    height: auto !important;
-    max-width: 170px;
-    max-height: 74px;
-    object-fit: contain !important;
-  }
-
-  .logos220 img:nth-child(7),
-  .logos220 img:nth-child(12),
-  .logos220 img:nth-child(16) { display: none; }
-
-  .gallery-heading {
-    height: 161px;
-    margin-top: 0;
-    padding-top: 50px;
-    align-items: flex-start;
-  }
-
-  .style168 {
-    height: 1868px;
-    margin-top: 0;
-  }
-
-  .style168-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 467px);
-  }
-
-  .style168-grid picture { display: block; }
-  .style168-grid img,
-  .style168-grid picture img {
-    position: static !important;
-    width: 100% !important;
-    height: 467px !important;
-    object-fit: cover;
-  }
-
-  .style168-grid > :nth-child(10) { grid-column: 3; grid-row: 4; }
-
-  .style168-text {
-    left: 120px;
-    top: 1567px;
-    width: 661px;
-    font-size: 22px;
-    line-height: 1.22;
-  }
-}
-
-@media (max-width: 767px) {
-  .hero { background: #8d8d8d; }
-  .hero-nav .logo-wordmark { filter: invert(1); }
-  .menu-toggle img { filter: invert(1); }
-  .hero-nav nav { background: #8d8d8d; }
-  .hero-nav a { color: #fff; }
-
-  .hero-media::after {
-    background: linear-gradient(180deg, rgba(141,141,141,0) 42%, #8d8d8d 100%);
-  }
-
-  .hero-text,
-  .hero-copy { background: #8d8d8d; }
-
-  .about {
-    padding: 0;
-    min-height: 640px;
-    color: #fff;
-    overflow: hidden;
-  }
-
-  .about-grid { display: contents; }
-  .about-grid img { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; object-fit: cover; }
-  .about::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.05) 24%, rgba(0,0,0,.84) 100%); }
-  .about .section-title { position: absolute; z-index: 2; left: 24px; top: 360px; color: #fff; }
-  .about .section-title::before { background: #fff; }
-  .about-grid > div { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 28px; width: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-  .about-p1, .about-p2 { margin: 0; color: #fff; font-size: 12px; line-height: 1.35; }
-
-  .node212 { padding-top: 38px; padding-bottom: 38px; }
-  .bento131 { gap: 0; }
-  .bento131 > * { margin-top: 0 !important; }
-  .services { background: #8d8d8d; }
-
-  .partners-heading { padding-top: 58px; background: #fff; }
-  .partners-heading .section-title { white-space: normal; font-size: clamp(23px, 7vw, 32px); }
-
-  .logos220 {
-    height: auto;
-    aspect-ratio: auto;
-    padding: 44px 24px 58px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 34px 18px;
-  }
-  .logos220 img { position: static !important; width: auto !important; height: auto !important; max-width: 100% !important; max-height: 58px !important; }
-  .logos220 img:nth-child(7), .logos220 img:nth-child(12), .logos220 img:nth-child(16) { display: none; }
-
-  .gallery-heading { margin-top: 0; padding-top: 44px; padding-bottom: 32px; }
-  .style168 { margin-top: 0; }
-  .style168-grid { gap: 0; }
-  .style168-grid > :nth-child(3), .style168-grid > :nth-child(4), .style168-grid > :nth-child(7) { grid-column: auto; }
-  .style168-grid > :nth-child(10) { display: block; grid-column: 2; }
-  .style168-text { display: block; padding: 32px 24px; font-size: 14px; line-height: 1.45; }
 }
 
 * {
@@ -3161,10 +2942,6 @@ body:has(dialog[open]) {
   background-color: #f1ede7;
 }
 
-.logos220 img {
-  mix-blend-mode: multiply;
-}
-
 @media (min-width: 768px) {
   body .logos220 img:nth-child(14) {
     top: 160px;
@@ -3525,6 +3302,75 @@ body .logos220 > img:nth-child(2) {
   }
 }
 
+/* The desktop image remains a direct visual child; mobile gets Figma's real mask. */
+body .about-photo-frame {
+  display: contents;
+}
+
+@media (max-width: 520px) {
+  body .about-grid::before,
+  body .about-grid::after {
+    content: none;
+  }
+
+  body .about-grid > .about-photo-frame {
+    position: absolute;
+    z-index: 0;
+    top: calc(100vw * 423 / 402);
+    left: 0;
+    display: block;
+    width: 100%;
+    height: calc(100vw * 371 / 402);
+    overflow: hidden;
+  }
+
+  body .about-photo-frame img {
+    content: url("assets/about_figma.webp");
+    position: absolute;
+    z-index: 0;
+    inset: auto;
+    top: calc(100vw * -40 / 402);
+    left: calc(100vw * -108 / 402);
+    width: calc(100vw * 615.377 / 402);
+    height: calc(100vw * 411.053 / 402);
+    max-width: none;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    transform: rotate(-1.82deg);
+    transform-origin: center;
+  }
+
+  body .about-photo-frame::before,
+  body .about-photo-frame::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    pointer-events: none;
+  }
+
+  body .about-photo-frame::before {
+    z-index: 2;
+    top: 0;
+    height: calc(100vw * 154 / 402);
+    background: linear-gradient(180deg, #1b1b1b 0%, rgba(27, 27, 27, 0) 100%);
+  }
+
+  body .about-photo-frame::after {
+    z-index: 1;
+    inset-block: 0;
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 520px) {
+  body .about-grid::before,
+  body .about-grid::after {
+    content: none !important;
+  }
+}
+
 /* Exact desktop crop for the wide bento image from Figma node 151:222. */
 @media (min-width: 768px) {
   body .bento131 > img.bento-wide {
@@ -3597,5 +3443,225 @@ body .logos220 > img:nth-child(2) {
     object-fit: cover;
     object-position: center;
     transform: translateX(-50%);
+  }
+}
+
+/* New mobile About composition from Figma node 31:5496. */
+@media (max-width: 520px) {
+  body .about {
+    position: relative;
+    width: 100%;
+    height: calc(100vw * 794 / 402);
+    min-height: 740px;
+    max-height: none;
+    padding: 0;
+    overflow: hidden;
+    background: #1b1b1b;
+  }
+
+  body .about .section-title {
+    position: absolute;
+    z-index: 3;
+    top: calc(100vw * 30 / 402);
+    left: calc(100vw * 30 / 402);
+    min-height: 30px;
+    margin: 0;
+    padding: 0;
+    gap: 10px;
+    color: #f9f9f9;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1.02;
+    letter-spacing: 5.7px;
+  }
+
+  body .about .section-title::before {
+    width: 21px;
+    height: 21px;
+    flex: 0 0 21px;
+    background: #f9f9f9;
+  }
+
+  body .about-grid {
+    position: static;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  body .about-grid > div {
+    position: absolute;
+    z-index: 3;
+    inset: auto;
+    top: calc(100vw * 99 / 402);
+    left: calc(100vw * 30 / 402);
+    display: block;
+    width: calc(100% - (100vw * 60 / 402));
+  }
+
+  body .about-p1,
+  body .about-p2 {
+    position: static;
+    width: auto;
+    margin: 0;
+    color: #f9f9f9;
+    font-size: 16px;
+    line-height: normal;
+  }
+
+  body .about-p1 {
+    max-width: 321px;
+    font-weight: 500;
+  }
+
+  body .about-p2 {
+    max-width: 332px;
+    margin-top: calc(100vw * 25 / 402);
+    font-weight: 300;
+  }
+
+  body .about-grid img {
+    content: url("assets/about_figma.webp");
+    position: absolute;
+    z-index: 0;
+    inset: auto;
+    top: calc(100vw * 423 / 402);
+    left: 50%;
+    width: 108%;
+    height: calc(100vw * 371 / 402);
+    max-width: none;
+    margin: 0;
+    object-fit: cover;
+    object-position: center;
+    transform: translateX(-50%) rotate(-1.82deg) scale(1.03);
+    transform-origin: center;
+  }
+
+  body .about-grid::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: calc(100vw * 423 / 402);
+    left: 0;
+    width: 100%;
+    height: calc(100vw * 154 / 402);
+    pointer-events: none;
+    background: linear-gradient(180deg, #1b1b1b 0%, rgba(27, 27, 27, 0) 100%);
+  }
+
+  body .about-grid::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    top: calc(100vw * 423 / 402);
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  body .about-grid > .about-photo-frame > img {
+    top: calc(100vw * -40 / 402);
+    left: calc(100vw * -108 / 402);
+    width: calc(100vw * 615.377 / 402);
+    height: calc(100vw * 411.053 / 402);
+    transform: rotate(-1.82deg);
+  }
+
+  body .about::after {
+    content: none !important;
+    background: none !important;
+  }
+}
+
+/* Mobile bento photo selection from Figma node 31:5500; layout stays unchanged. */
+@media (max-width: 767px) {
+  body .bento131 > img:nth-child(4) {
+    content: url("assets/webp/bento_142.webp");
+  }
+
+  body .bento131 > img:nth-child(7) {
+    content: url("assets/webp/bento_138.webp");
+  }
+
+  body .bento131 > img:nth-child(8) {
+    content: url("assets/webp/bento_150.webp");
+  }
+
+  body .bento131 > img:nth-child(10) {
+    content: url("assets/bento_154_figma.webp");
+  }
+}
+
+@media (max-width: 767px) {
+  body .logos220 > img:nth-child(2) {
+    width: auto !important;
+    height: auto !important;
+    max-width: 62px !important;
+    max-height: 38px !important;
+  }
+
+  body .logos220 > img:nth-child(1),
+  body .logos220 > img:nth-child(2),
+  body .logos220 > img:nth-child(3) {
+    transform: translateY(-7px) !important;
+  }
+}
+
+/* Exact mobile Event Photos rhythm from Figma node 31:5426. */
+@media (max-width: 767px) {
+  body .style168,
+  body .style168-grid {
+    height: auto;
+  }
+
+  body .style168-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-flow: row;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  body .style168-grid > img:nth-child(n) {
+    position: static !important;
+    inset: auto !important;
+    display: block;
+    width: calc(100% + 2px) !important;
+    height: auto !important;
+    margin: 0 -2px -2px 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center 18%;
+    transform: none;
+    clip-path: none;
+    filter: brightness(0.8);
+  }
+
+  body .style168-grid > img:nth-child(1) { grid-column: 1; grid-row: 1; }
+  body .style168-grid > img:nth-child(2) { grid-column: 2; grid-row: 1; }
+  body .style168-grid > img:nth-child(3) { grid-column: 1 / -1; grid-row: 2; filter: brightness(0.9); }
+  body .style168-grid > img:nth-child(4) { grid-column: 1 / -1; grid-row: 3; }
+  body .style168-grid > img:nth-child(5) { grid-column: 1; grid-row: 4; }
+  body .style168-grid > img:nth-child(6) { grid-column: 2; grid-row: 4; }
+  body .style168-grid > img:nth-child(7) { grid-column: 1 / -1; grid-row: 5; }
+  body .style168-grid > img:nth-child(8) { grid-column: 1; grid-row: 6; }
+  body .style168-grid > img:nth-child(9) { grid-column: 2; grid-row: 6; }
+  body .style168-grid > img:nth-child(10) { display: none; }
+
+  body .style168-grid > img:nth-child(3),
+  body .style168-grid > img:nth-child(5),
+  body .style168-grid > img:nth-child(6) {
+    object-position: center top;
+  }
+
+  body .style168-grid > img:nth-child(1),
+  body .style168-grid > img:nth-child(2),
+  body .style168-grid > img:nth-child(5),
+  body .style168-grid > img:nth-child(6),
+  body .style168-grid > img:nth-child(8),
+  body .style168-grid > img:nth-child(9) {
+    min-width: calc(50vw + 2px);
   }
 }
