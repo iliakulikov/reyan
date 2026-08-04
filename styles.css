@@ -3163,6 +3163,10 @@ body .gallery-heading .title-block {
 }
 
 @media (max-width: 767px) {
+  body .style168-text {
+    display: none;
+  }
+
   body .style168,
   body .style168-grid {
     background: #f1ede7;
