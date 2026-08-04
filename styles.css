@@ -3269,6 +3269,10 @@ body .logos220 > img:nth-child(2) {
 
 /* Exact desktop About photo crop and angle from Figma node 151:1422. */
 @media (min-width: 768px) {
+  body .about .section-title {
+    color: #f9f9f9;
+  }
+
   body .about-grid img {
     content: url("assets/about_figma.webp");
     z-index: 0;
@@ -3297,6 +3301,8 @@ body .logos220 > img:nth-child(2) {
 
   body .about .section-title,
   body .about .title-block,
+  body .about-p1,
+  body .about-p2,
   body .about-grid > div {
     z-index: 2;
   }
@@ -3572,6 +3578,18 @@ body .about-photo-frame {
   body .about::after {
     content: none !important;
     background: none !important;
+  }
+}
+
+/* Keep the mobile photo flush with the section bottom on narrow viewports. */
+@media (max-width: 520px) {
+  body .about-grid > .about-photo-frame {
+    bottom: -1px;
+    height: auto;
+  }
+
+  body .about-grid > .about-photo-frame > img {
+    height: calc(100% + 9.95025vw);
   }
 }
 
