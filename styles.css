@@ -3230,6 +3230,7 @@ body:has(dialog[open]) {
 
 /* Fluid desktop canvases: full-bleed on laptops, centered on ultrawide screens. */
 @media (min-width: 1400px) {
+  body .hero,
   body .about,
   body .bento131,
   body .style168 {
@@ -3268,11 +3269,16 @@ body:has(dialog[open]) {
 }
 
 @media (min-width: 1729px) {
+  body .hero,
   body .about,
   body .bento131,
   body .style168 {
     margin-right: auto;
     margin-left: auto;
+  }
+
+  body .hero-media {
+    left: 0;
   }
 }
 
@@ -3481,5 +3487,115 @@ body .logos220 > img:nth-child(2) {
 
   body .about-grid > div {
     bottom: 44px;
+  }
+}
+
+/* Exact desktop About photo crop and angle from Figma node 151:1422. */
+@media (min-width: 768px) {
+  body .about-grid img {
+    content: url("assets/about_figma.webp");
+    z-index: 0;
+    inset: auto;
+    left: 51.43%;
+    top: 37%;
+    width: 120.74%;
+    height: 136.2%;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    transform: translate(-50%, -50%) rotate(-2.83deg);
+    transform-origin: center;
+  }
+
+  body .about-grid::after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(180deg, rgba(27, 27, 27, 0) 45.6%, #1b1b1b 100%),
+      rgba(0, 0, 0, 0.2);
+  }
+
+  body .about .section-title,
+  body .about .title-block,
+  body .about-grid > div {
+    z-index: 2;
+  }
+}
+
+/* Exact desktop crop for the wide bento image from Figma node 151:222. */
+@media (min-width: 768px) {
+  body .bento131 > img.bento-wide {
+    content: url("assets/bento_154_figma.webp");
+    object-fit: cover;
+    object-position: center 23.75%;
+    filter: brightness(0.8);
+  }
+}
+
+/* Exact desktop treatment for event_01 from Figma node 159:71. */
+@media (min-width: 768px) {
+  body .style168-grid > img:nth-child(1) {
+    z-index: 1;
+    object-fit: cover;
+    object-position: center 42.43%;
+    clip-path: inset(10.22%);
+    transform: scale(1.2574);
+    transform-origin: center;
+    filter: brightness(0.8);
+  }
+
+  body .style168-grid::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    top: -67px;
+    left: -68px;
+    width: 234px;
+    height: 245px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: linear-gradient(143deg, rgba(88, 88, 88, 0.6), rgba(88, 88, 88, 0));
+    backdrop-filter: blur(2.27px);
+    -webkit-backdrop-filter: blur(2.27px);
+  }
+}
+
+/* Keep faces visible in the requested desktop gallery cells. */
+@media (min-width: 768px) {
+  body .style168-grid > img:nth-child(1) {
+    object-position: center 30%;
+  }
+
+  body .style168-grid > img:nth-child(3),
+  body .style168-grid > img:nth-child(5),
+  body .style168-grid > img:nth-child(6) {
+    object-position: center top;
+  }
+}
+
+/* Exact desktop CTA image geometry from Figma node 151:1371. */
+@media (min-width: 768px) {
+  body .cta1318 {
+    height: 577px;
+  }
+
+  body .cta1318-button {
+    top: 229px;
+    transform: translateX(-50%);
+  }
+
+  body .cta1318-bg > img:nth-child(2) {
+    inset: auto;
+    left: 50%;
+    top: -355px;
+    width: max(107.57%, 1506px);
+    height: 1124px;
+    max-width: none;
+    object-fit: cover;
+    object-position: center;
+    transform: translateX(-50%);
   }
 }
