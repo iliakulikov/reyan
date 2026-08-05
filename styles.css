@@ -1755,8 +1755,9 @@ body:has(dialog[open]) {
 
   .hero-mark {
     width: 142px;
-    height: auto;
+    height: calc(142px * 188.002 / 197.517);
     aspect-ratio: 197.517 / 188.002;
+    flex: 0 0 auto;
   }
 
   .hero-copy img {
@@ -1765,7 +1766,8 @@ body:has(dialog[open]) {
 
   .hero-word {
     width: min(250px, calc(100vw - 64px));
-    height: 18px;
+    height: calc(min(250px, calc(100vw - 64px)) * 22.324 / 382.597);
+    aspect-ratio: 382.597 / 22.324;
     margin-top: 22px;
   }
 
