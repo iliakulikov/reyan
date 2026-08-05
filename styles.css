@@ -1072,6 +1072,11 @@ body:has(dialog[open]) {
   object-fit: contain;
 }
 
+.footer-social a {
+  display: block;
+  line-height: 0;
+}
+
 .footer1323-right {
   margin: 0;
   align-self: flex-start;
@@ -2530,12 +2535,12 @@ body:has(dialog[open]) {
     gap: 28px;
   }
 
-  .footer-social img:first-child {
+  .footer-social > a img {
     width: 44px;
     height: 44px;
   }
 
-  .footer-social img:last-child {
+  .footer-social > img {
     width: 40px;
     height: 40px;
   }
