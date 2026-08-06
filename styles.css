@@ -3797,8 +3797,8 @@ body .mission,
 body .mission::before,
 .node212,
 .node216,
-.bento131,
-.bento-card,
+body .bento131,
+body .bento-card,
 .logos220,
 .style168 {
   background-color: #f1ede7;
